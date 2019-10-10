@@ -206,6 +206,59 @@ ul, p, h1, h2, h3 {
                 font-size: 20px;
                 color: $focus-color;
             }
+            .fa-angle-down{
+                animation: animate ease-in-out 1s;
+                animation-iteration-count: infinite;
+                -webkit-animation: animate linear 1s;
+                -webkit-animation-iteration-count: infinite;
+                -moz-animation: animate linear 1s;
+                -moz-animation-iteration-count: infinite;
+              }
+              
+              @keyframes animate{
+                0% {
+                  transform:  translate(0px,-8px)  ;
+                }
+                25% {
+                  transform:  translate(0px,-6px)  ;
+                }
+                50% {
+                  transform:  translate(0px,-2px)  ;
+                }
+                100% {
+                  transform:  translate(0px,5px)  ;
+                }
+              }
+              
+              @-moz-keyframes animate{
+                0% {
+                  -moz-transform:  translate(0px,-8px)   ;
+                }
+                71% {
+                  -moz-transform:  translate(0px,-6px)  ;
+                }
+                72% {
+                  -moz-transform:   translate(0px,-2px) ;
+                }
+                100% {
+                  -moz-transform: translate(0px,5px)  ;
+                }
+              }
+              
+              @-webkit-keyframes animate {
+                0% {
+                  -webkit-transform:  translate(0px,-8px)   ;
+                }
+                71% {
+                  -webkit-transform:  translate(0px,-6px)  ;
+                }
+                72% {
+                  -webkit-transform:  translate(0px,-2px)  ;
+                }
+                100% {
+                  -webkit-transform:  translate(0px,5px)  ;
+                }
+              }
         }
 
         &__text {
