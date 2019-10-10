@@ -27,6 +27,8 @@ $normal-font: 'Roboto', sans-serif;
 }
 .container {
     max-width: $container;
+    padding-right: 18px;
+    padding-left: 18px;
     margin: 0 auto;
 }
 ul, p, h1, h2, h3 {
@@ -36,16 +38,25 @@ ul, p, h1, h2, h3 {
 /*----------HEADER SECTION-------------*/
 /*----header menu----*/
 .header {
-    height: 100vh;
+    height: 90vh;
     background: $normal-color;
 }
 .container {
     .row-menu {
+        height: 15%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         padding: 24px 0px 24px 0px;
+
+        @media screen  and (max-width: 1140px){
+            justify-content: center;
+        }
+
+        @media (min-width: 375px) and (max-width: 540px){
+            justify-content: space-between;
+        }
     }
 }
 .logo {
@@ -55,6 +66,10 @@ ul, p, h1, h2, h3 {
     color: $focus-color;
     text-transform: uppercase;
     cursor: pointer;
+
+    @media (min-width: 375px) and (max-width: 540px){
+        font-size: 12px;
+    }
 }
 .main-navigation {
     
@@ -67,6 +82,12 @@ ul, p, h1, h2, h3 {
 
             &:last-child {
                 margin-right: 0;
+            }
+
+            @media screen  and (max-width: 1140px){
+                margin-right: 0;
+                padding-top: 20px;
+                padding-bottom: 20px;
             }
         }
         .main-navigation__link {
@@ -85,6 +106,10 @@ ul, p, h1, h2, h3 {
             }
         }
     }
+
+    @media (min-width: 375px) and (max-width: 540px){
+        display: none;
+    }
 }
 .call {
     display: flex;
@@ -96,21 +121,41 @@ ul, p, h1, h2, h3 {
         margin-right: 4rem;
         font-weight: $normal-font;
         font-size: 14px;
+        text-decoration: none;
+        color: $focus-color;
+
+        @media screen and (max-width: 1140px){
+           font-size: 18px;
+        }
+
+        @media (min-width: 375px) and (max-width: 540px){
+            font-size: 12px;
+            margin-right: 0;
+            color: #ffffff;
+        }
     }
 
     &__btn {
         font-size: 13px;
+
+        @media (min-width: 375px) and (max-width: 540px){
+            display: none;
+        }
     }
 }
 /*----header main content----*/
 .row {
+    height: 85%;
     display: flex;
+    margin-left: auto;
 }
 .social-wrapper {
-    background: $normal-color;
-    height: 100vh;
-    padding-top: 15%;
+    position: relative;
     width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $normal-color;
     color: $focus-color;
 
     &__text {
@@ -119,6 +164,8 @@ ul, p, h1, h2, h3 {
         font-family: $normal-font;
         font-size: 14px;
         transform: rotate(90deg);
+        color: $focus-color;
+        text-decoration: none;
         text-transform: uppercase;
 
         &::after {
@@ -131,6 +178,47 @@ ul, p, h1, h2, h3 {
             background: $focus-color;
         }
     }
+
+    .scroll-box {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        left: 0;
+        transform: translateY(50%);
+        width: 200px;
+        height: 95px;
+        background: $normal-color;
+        color: #ffffff;
+
+        &__circle {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 2px solid $focus-color;
+            box-sizing: border-box;
+
+            .fa-angle-down {
+                font-size: 20px;
+                color: $focus-color;
+            }
+        }
+
+        &__text {
+            margin-right: 12px;
+            font-family: $focus-font;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    }
+
+    @media (min-width: 375px) and (max-width: 540px){
+       display: none;
+    }
 }
 .header-content {
     width: 100%;
@@ -138,8 +226,8 @@ ul, p, h1, h2, h3 {
     color: #ffffff;
 
     .content-box {
-        padding-top: 190px;
-        padding-left: 60px;
+        padding-top: 12rem;
+        padding-left: 2rem;
 
         &__title {
             margin-bottom: 20px;
@@ -151,23 +239,61 @@ ul, p, h1, h2, h3 {
             .title-focus {
                 color: $focus-color;
             }
+
+            @media screen  and (max-width: 1140px){
+                font-size: 35px;
+            }
+            
+            @media (min-width: 375px) and (max-width: 540px){
+                font-size: 23px;
+                line-height: 31px;
+            }
         }
     
         &__text {
-            max-width:40%;
+            max-width: 500px;
             margin-bottom: 40px;
             font-family: $normal-font;
             font-size: 22px;
+
+            @media (min-width: 375px) and (max-width: 540px){
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+        .btn {
+            width: 205px;
+
+            @media (min-width: 375px) and (max-width: 540px){
+                width: 100%;
+                margin: 0px 0px 26px 0px;
+            }
         }
         .btn-cost {
-            width: 205px;
             margin-right: 20px;
             font-size: 13px;
+
+            @media (min-width: 375px) and (max-width: 540px){
+                margin: 0px 0px 26px 0px;
+            }
         }
         .btn-submit {
-            width: 205px;
             padding-right:0;
             padding-left:0;
+        }
+
+        .row {
+            display: flex;
+
+            @media (min-width: 375px) and (max-width: 540px){
+                flex-direction: column;
+            }
+        }
+
+        @media (min-width: 375px) and (max-width: 540px){
+            padding-top: 5rem;
+            padding-right: 2rem;
+            padding-left: 2rem;
         }
     }
 }
